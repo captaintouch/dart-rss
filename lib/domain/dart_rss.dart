@@ -127,7 +127,7 @@ class WebFeed {
   }
 
   static Future<WebFeed> fromUrl(String url) async {
-    final response = await http.get(url);
+    final response = await http.get(Uri.parse(url));
     return fromXmlString(response.body);
   }
 
